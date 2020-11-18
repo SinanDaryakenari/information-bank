@@ -18,7 +18,7 @@ Route::get('/', function () {
 });
 
 Route::get('/template', function () {
-    return view('template');
+    return view('template.index');
 });
 
 Auth::routes();
