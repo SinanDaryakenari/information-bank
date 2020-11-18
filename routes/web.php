@@ -17,10 +17,18 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/template', function () {
+Route::get('/template/index', function () {
     return view('template.index');
 });
+
+Route::get('/template/calandar', function () {
+    return view('template.calendar');
+});
+
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+
