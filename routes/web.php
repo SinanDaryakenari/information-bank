@@ -33,7 +33,49 @@ Route::get('/template/charts/chartsjs', function () {
     return view('template.charts.chartsjs');
 });
 
+Route::get('/template/widgets', function () {
+    return view('template.widgets');
+});
 
+Route::get('/template/home', function () {
+    return view('template.home');
+});
+
+Route::get('/template/charts/flot', function () {
+    return view('template.charts.flot');
+});
+
+Route::get('/template/charts/inline', function () {
+    return view('template.charts.inline');
+});
+
+Route::get('/template/example/404', function () {
+    return view('template.example.404');
+});
+
+Route::get('/template/example/500', function () {
+    return view('template.example.500');
+});
+
+Route::get('/template/example/blank', function () {
+    return view('template.example.blank');
+});
+
+Route::get('/template/example/500', function () {
+    return view('template.example.500');
+});
+
+Route::get('/template/example/contacts', function () {
+    return view('template.example.contacts');
+});
+
+Route::get('/template/example/e-commerce', function () {
+    return view('template.example.commerce');
+});
+
+Route::get('/template/example/forgot-password', function () {
+    return view('template.example.forgot-password');
+});
 
 Auth::routes();
 
