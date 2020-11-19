@@ -25,6 +25,15 @@ Route::get('/template/calandar', function () {
     return view('template.calendar');
 });
 
+Route::get('/template/gallery', function () {
+    return view('template.gallery');
+});
+
+Route::get('/template/charts/chartsjs', function () {
+    return view('template.charts.chartsjs');
+});
+
+
 
 Auth::routes();
 
