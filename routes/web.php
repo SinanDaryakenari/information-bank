@@ -13,9 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 // Route::get('/template/index', function () {
 //     return view('template.index');
@@ -81,7 +81,18 @@ Route::get('/', function () {
 Route::get('/test', 'TestController@index');
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::middleware(['auth'])->group(function(){
+    Route::get('/', 'HomeController@index')->name('home');
+
+    Route::middleware('can:admin')->group(function(){
+        Route::get('/admin/users/index', 'Admin\UserController@index');
+    });
+    Route::middleware('can:user')->group(function(){
+        
+    });
+
+});
+
 
 
 
