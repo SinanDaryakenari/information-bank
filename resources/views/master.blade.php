@@ -686,24 +686,23 @@
           </li>
           <li class="nav-header">LABELS</li>
           <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon far fa-circle text-danger"></i>
-              <p class="text">Important</p>
-            </a>
+          <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                                     <i class="nav-icon far fa-circle text-danger"></i>
+                                        {{ __('Logout') }}
+                                    </a>                                         
+                                    @can('admin')                                    
+                                        <a class="dropdown-item"
+                                            href="{{ url('/test') }}">
+                                            {{ __('Test') }}
+                                        </a>
+                                    @endcan
+                                    <form id="logout-form" action="{{ route('logout') }}"
+                                        method="POST" class="d-none">
+                                        @csrf
+                                    </form>            
           </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon far fa-circle text-warning"></i>
-              <p>Warning</p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon far fa-circle text-info"></i>
-              <p>Informational</p>
-            </a>
-          </li>
-        </ul>
+                  </ul>
       </nav>
       <!-- /.sidebar-menu -->
     </div>
@@ -715,7 +714,13 @@
     @yield('content')
   </div>
   <!-- /.content-wrapper -->
-    @yield('template.layout.footer')
+  <footer class="main-footer">
+    <strong>Copyright &copy; 2014-2019 <a href="http://adminlte.io">AdminLTE.io</a>.</strong>
+    All rights reserved.
+    <div class="float-right d-none d-sm-inline-block">
+      <b>Version</b> 3.0.5
+    </div>
+  </footer>
 
   <!-- Control Sidebar -->
   <aside class="control-sidebar control-sidebar-dark">
